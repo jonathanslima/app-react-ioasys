@@ -1,0 +1,83 @@
+@import '../../assets/css/variables.scss';
+@import '../../assets/css/buttons.scss';
+
+.logo {
+    margin-bottom: 3rem;
+
+    img {
+        width: 70%;
+        margin-left: 15%;
+    }
+}
+
+.presentation {
+    text-align: center;
+
+    .title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
+    }
+}
+
+.login-form {
+    .input-group {
+        margin-bottom: 1.5rem;
+
+        &:nth-child(2){
+            margin-bottom: 2rem;
+        }
+
+        .input-group-text,
+        .form-control {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #383743;
+            border-radius: 0;
+        }
+
+        .form-control{
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.main-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        position: absolute;
+        transform: translate(-1000%);
+    }
+
+    .error{
+        color: $pink;
+    }
+
+    .error-text{
+        display: none;
+    }
+
+}
+
+@media(min-width: 992px){
+    .logo {
+        margin-bottom: 4rem;
+
+        img {
+            width: 90%;
+            margin-left: 5%;
+        }
+    }
+}
