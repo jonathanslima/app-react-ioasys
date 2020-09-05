@@ -3,44 +3,16 @@ import { Formik } from 'formik';
 import logo from '../../assets/img/logo.png';
 import { MdMailOutline, MdLockOpen, MdInfo, MdVisibility, MdVisibilityOff, LockOpenVariantOutline } from 'react-icons/md';
 import './index.scss';
+import Loader from '../../components/loader'
 
 // import { Container } from './styles';
 
 function Login() {
-    function handleSubmit(e) {
-        e.preventDefault()
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+    const [serviceRequest, setserviceRequest] = useState(false);
 
-        var raw = JSON.stringify({ "email": "testeapple@ioasys.com.br", "password": "12341234" });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        let obj;
-
-        fetch("https://empresas.ioasys.com.br/api/v1/users/auth/sign_in", requestOptions)
-            .then(response => {
-                obj = {
-                    token: response.headers.get('access-token'),
-                    uid: response.headers.get('uid'),
-                    client: response.headers.get('client'),
-                };
-                return response.json();
-            })
-            .then(res => {
-                obj = { ...res, ...obj }
-                console.log(obj)
-
-            })
-            .catch(error => console.log('error', error));
-    }
     return (
         <>
+            {serviceRequest ? <Loader /> : null}
             <div className="container">
                 <div className="row">
                     <main className="main-content col-md-6 offset-md-3 col-lg-4 offset-lg-4">
@@ -79,7 +51,7 @@ function Login() {
 
                             <p className="error error-text text-center"><small className="font-weight-bold">Credenciais informadas são inválidas, tente novamente.</small></p>
 
-                            <button onClick={handleSubmit} type="submit" className="btn btn-main text-white text-uppercase">Entrar</button>
+                            <button type="submit" className="btn btn-main text-white text-uppercase">Entrar</button>
                         </form>
                     </main>
                 </div>

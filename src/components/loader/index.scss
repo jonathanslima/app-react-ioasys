@@ -1,0 +1,19 @@
+@import "../../assets/css/variables.scss";
+
+.service-requesting{
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    .spinner-border{
+        width: 8rem;
+        height: 8rem;
+        border-width: 0.5rem;
+        color: $greeny-blue;
+    }
+}
