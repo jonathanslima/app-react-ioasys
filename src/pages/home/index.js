@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './index.scss';
 
-// import { Container } from './styles';
+import MainHeader from '../../components/mainHeader';
+import SearchHeader from '../../components/searchHeader';
+
 
 function Home() {
+    const [viewHeader, setViewHeader] = useState(true);
     return (
-        <h1>Home</h1>
+        <>
+            <header className="header d-flex justify-content-around align-items-center">
+                {viewHeader ? <MainHeader /> : <SearchHeader />}
+            </header>
+        </>
     );
 }
 

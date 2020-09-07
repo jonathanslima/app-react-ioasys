@@ -1,0 +1,40 @@
+@import '../../assets/css/variables.scss';
+
+.form-search{
+    padding: 1rem 0 1rem;
+    width: 90%;
+
+    .searchField,
+    .input-group-text{
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #fff;
+    }
+    
+    .searchField{
+        color: #fff;
+        text-align: left;
+        
+        &::placeholder{
+            color: #991237; 
+        }
+
+        &:focus{
+            background-color: transparent;
+            box-shadow: none;
+            
+        }
+    }
+    
+    .input-group-text{
+        cursor: pointer;
+        border-radius: 0;
+        color: #fff;
+        font-size: 24px;
+        transition: 500ms all ease;
+
+        &:hover{
+            color: #991237; 
+        }
+    }
+}
