@@ -28,6 +28,20 @@
         transform: translate(-1000%);
     }
 }
+
+.initial-disclaimer{
+    color: #383743;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 25vh;
+}
+
+.disclaimer{
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    color: #b5b4b4;
+}
     
 
 @media(min-width: 768px){
@@ -81,6 +95,10 @@
                 width: 30%;
             }
         }
+    }
+
+    .disclaimer{
+        font-size: 2rem;
     }
 }
 
