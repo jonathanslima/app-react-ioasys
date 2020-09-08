@@ -28,7 +28,6 @@ function Details() {
             .then(result => {
                 setDetail(result);
             })
-            // .then(() => { setserviceRequest(false) })
             .catch(error => {
                 alert('Ocorreu algum problema tente novamente em alguns instantes')
                 console.log('error', error)
