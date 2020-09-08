@@ -2,16 +2,16 @@ import React from 'react';
 import { MdSearch } from 'react-icons/md';
 import logo from '../../assets/img/logo-white.png';
 
-// import { Container } from './styles';
+import { showSearch } from '../searchHeader';
 
-function MainHeader() {
+function MainHeader(props) {
     return (
         <>
             <div className="logo">
                 <img src={logo} alt="ioasys logo" />
             </div>
 
-            <div className="search">
+            <div className="search" onClick={props.changeBar}>
                 <MdSearch />
             </div>
         </>
