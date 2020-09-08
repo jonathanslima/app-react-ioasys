@@ -1,5 +1,11 @@
 @import '../../assets/css/variables.scss';
 
+.link{
+    &:hover{
+        text-decoration: none;
+    }
+}
+
 .company{
     background: #fff;
     flex-direction: column;
