@@ -11,7 +11,7 @@ function SearchHeader(props) {
                     <button className="input-group-text"><MdSearch /></button>
                 </div>
 
-                <input type="text" className="form-control searchField" id="search" placeholder="Pesquisar" />
+                <input type="text" required className="form-control searchField" id="search" placeholder="Pesquisar" />
 
                 <div className="input-group-append">
                     <div className="input-group-text" onClick={props.changeBar}><MdClose /></div>
