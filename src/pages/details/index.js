@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { MdKeyboardBackspace } from 'react-icons/md';
 import './index.scss';
 
@@ -9,6 +9,7 @@ function Details() {
 
     const retrieveData = () => {
         let dataRequest = localStorage.getItem('data');
+        if (!dataRequest) return
         dataRequest = JSON.parse(dataRequest);
         let id = window.location.href.split("?id=")[1];
         let myHeaders = new Headers();
@@ -40,6 +41,7 @@ function Details() {
 
     return (
         <>
+            {!localStorage.getItem('data') ? <Redirect to="/login" /> : null}
             <header className="header d-flex justify-content-start pl-5 text-white align-items-center font-weight-bold">
                 <Link to="/home" className="text-white"><MdKeyboardBackspace /></Link>
                 {detail ?

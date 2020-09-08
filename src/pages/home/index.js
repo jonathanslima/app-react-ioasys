@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import './index.scss';
 
 import MainHeader from '../../components/mainHeader';
@@ -27,7 +28,6 @@ function Home() {
 
         let dataRequest = localStorage.getItem('data');
         dataRequest = JSON.parse(dataRequest);
-
 
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -59,6 +59,7 @@ function Home() {
 
     return (
         <>
+            {!localStorage.getItem('data') ? <Redirect to="/login" /> : null}
             {serviceRequest ? <Loader /> : null}
             <header className="header d-flex justify-content-around align-items-center">
                 {viewHeader ?
