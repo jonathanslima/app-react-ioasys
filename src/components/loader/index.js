@@ -3,9 +3,9 @@ import './index.scss';
 
 function Loader() {
     return (
-        <div class="service-requesting">
-            <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
+        <div className="service-requesting">
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
             </div>
         </div>
     );
